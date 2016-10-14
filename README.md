@@ -1,2 +1,2 @@
 # chez-sxml
-SXML/SSAX binding for Chez Scheme.
+SXML/SSAX porting to Chez Scheme.
