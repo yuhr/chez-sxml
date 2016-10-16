@@ -1,5 +1,5 @@
 
-(library (sxml ssax)
+(library (sxml)
   (export make-xml-token
           xml-token?
           xml-token-kind
@@ -45,15 +45,31 @@
           ssax:define-labeled-arg-macro
           ssax:reverse-collect-str
           ssax:reverse-collect-str-drop-ws
-          ssax:xml->sxml)
+          ssax:xml->sxml
+
+          nodeset?
+          node-typeof?
+          node-eq?
+          node-equal?
+          node-pos
+          take-until
+          take-after
+          map-union
+          node-reverse
+          node-trace
+          select-kids
+          node-self
+          node-join
+          node-reduce
+          node-or
+          node-closure
+          node-parent
+          sxpath)
   (import (except (scheme)
                   string-copy string-for-each string->list string-upcase
                   string-downcase string-titlecase string-hash string-copy! string-fill!
                   fold-right error filter)
           (prefix (only (scheme) error) scheme:)
-          (srfi :13 strings))
-  
-  (include "lib/utils.ss")
-  (include "lib/ssax.ss")
-  
-  )
+          (srfi :13 strings)
+          (sxml ssax)
+          (sxml sxpath)))
